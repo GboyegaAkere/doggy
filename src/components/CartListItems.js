@@ -49,7 +49,7 @@ const CartListItems = ({cartItem}) => {
           />
           
         </View>
-        <Text style={tw`mt-1`}> ${cartItem.product.price}</Text>
+        <Text style={tw`mt-1`}> ${cartItem.product.price* cartItem.quantity}</Text>
       </View>
     </View>
   )

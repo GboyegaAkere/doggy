@@ -22,7 +22,7 @@ const HomeScreen = () => {
         <Pressable style={tw`w-3/6 p-1`} 
         onPress={()=>{
           dispatch(ProductSlice.actions.setSelectedProduct(item.id))
-          navigation.navigate("Details")}}
+          navigation.navigate("About")}}
         >
           <Image style={tw`aspect-square w-full rounded`}  source={{uri:item.image}}/>
         </Pressable>

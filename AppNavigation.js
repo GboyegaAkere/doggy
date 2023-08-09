@@ -8,11 +8,14 @@ import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from './src/screens/HomeScreen';
 import DetailScreen from './src/screens/DetailScreen';
 import Cart from './src/screens/Cart';
+import { selectedNumberOfItems } from './store/CartSlice';
+import { useSelector } from 'react-redux';
 
 
 const Stack = createNativeStackNavigator();
 
 function AppNavigation() {
+  const selectedNumber = useSelector(selectedNumberOfItems)
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,12 +28,13 @@ function AppNavigation() {
                 className="space-x-1 items-center"
               >
                 <Ionicons name="cart-outline" size={25} color="gray" />
-                <Text className="text-lg">0</Text>
+                <Text className="text-lg">{selectedNumber}</Text>
               </Pressable>
             ),
           })}
         />
-        <Stack.Screen name="Details" component={DetailScreen} options={{presentation:'modal'}} />
+        <Stack.Screen name="About" component={DetailScreen} options={{presentation:'modal'}} 
+        />
         <Stack.Screen name="Cart" component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>

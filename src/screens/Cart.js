@@ -4,8 +4,15 @@ import cart from '../data/cart'
 import tw from "twrnc"
 import CartListItems from '../components/CartListItems'
 import { useSelector } from 'react-redux'
+import { selectedSubtotal,selectedDeliveryFee, selectedTotals } from '../../store/CartSlice'
+
+
 
 const Cart = () => {
+  subTotal = useSelector(selectedSubtotal)
+  delivery = useSelector(selectedDeliveryFee)
+  total = useSelector(selectedTotals)
+
   const cartItems = useSelector(state=>state.cart.items)
   return (
     <View>
@@ -20,15 +27,15 @@ const Cart = () => {
             <View style={tw`px-4 relative`}>
                 <View style={tw`flex-row justify-between items-center`}>
                   <Text style={tw`text-lg text-gray-500`}>Subtotal</Text>
-                  <Text className="text-gray-500" >$200</Text>
+                  <Text className="text-gray-500" >${subTotal}</Text>
                 </View>
                 <View style={tw`flex-row justify-between items-center`}>
                   <Text style={tw`text-lg text-gray-500`}>Delivery</Text>
-                  <Text style={tw`text-gray-500`}>$400</Text>
+                  <Text style={tw`text-gray-500`}>${delivery}</Text>
                 </View>
                 <View style={tw`flex-row justify-between items-center`}>
                   <Text style={tw`font-bold text-lg`}>Total</Text>
-                  <Text>$900</Text>
+                  <Text>${total}</Text>
                 </View>
 
              </View>
