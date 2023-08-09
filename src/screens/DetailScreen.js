@@ -1,18 +1,24 @@
-import { View, Text, Image ,Pressable} from 'react-native'
+import { View, Text, Image ,Pressable, TouchableOpacity} from 'react-native'
 import React from 'react'
 import products from '../data/products'
 import { useWindowDimensions } from 'react-native'
 import { FlatList } from 'react-native'
 import { ScrollView } from 'react-native'
 import tw from "twrnc"
+import { useSelector, useDispatch } from 'react-redux'
+import { CartSlice } from '../../store/CartSlice'
 
 const DetailScreen = () => {
     const {width} = useWindowDimensions()
-    const product = products[0]
-    
+    const dispatch =useDispatch()
+    //const product = products[0]
+
     const addToCart =()=>{
-        console.warn("set the function")
+        dispatch(CartSlice.actions.addCartItem({product:product}))
     }
+
+    const product =useSelector(state=>state.products.selectedProduct)
+
   return (
     <>
     <ScrollView>
@@ -34,12 +40,12 @@ const DetailScreen = () => {
     </View>
       
     </ScrollView>
-     <Pressable 
+     <TouchableOpacity 
      style={tw`bg-black w-11/12 absolute bottom-3 self-center rounded-2xl`}
      onPress={addToCart}
     >
      <Text style={tw`text-white self-center py-4`}>Add to cart</Text>
-    </Pressable>
+    </TouchableOpacity>
     </>
   )
 }

@@ -30,17 +30,11 @@ export default  [
     name: "Air Force 1",
     price: 169,
     sizes: [39, 40, 41, 42, 43],
-    description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
+    description: `American Eskimo Dogs come in three size varieties: Toy, Miniature, and Standard. They have a dense double coat that can be white or cream in color. These dogs are known for their fluffy appearance and their bushy tail that curls over their back. They have dark eyes and a distinctive expression that can range from alert to mischievous.
 
-Advantages:
-- Encapsulated Air-Sole unit for lightweight cushioning.
-- Genuine leather on the upper for durability and a premium look.
-- Solid rubber outsole for greater traction on different types of surfaces.
-- Color Shown: Palomino/White/Wild Berry
-- Model: 553558-215
-- Proven efficacy
-
-A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air cushioning for all-day comfort. The rubber outsole offers durable traction on a variety of surfaces.`,
+    These dogs are intelligent, agile, and often excel in various dog sports and activities. They are friendly, loyal, and enjoy being around people, making them good family companions. They tend to get along well with children and other pets, but proper socialization is important.
+    
+    Keep in mind that this description is based on information available up until September 2021, and there might have been developments or changes since then. If you're seeking more recent information or specific details, I recommend checking with reliable sources or breed organizations.`,
   },
   {
     id: "3",

@@ -1,21 +1,23 @@
-import { View, Text, FlatList, Image, Pressable } from 'react-native'
+import { View, Text, FlatList, Image, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import cart from '../data/cart'
 import tw from "twrnc"
 import CartListItems from '../components/CartListItems'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
+  const cartItems = useSelector(state=>state.cart.items)
   return (
     <View>
       <FlatList
-      data={cart}
+      data={cartItems}
       renderItem={({item})=>(
        <View>
         <CartListItems cartItem={item}/>
        </View>
       )}
       ListFooterComponent={() => (
-            <View style={tw`px-4`}>
+            <View style={tw`px-4 relative`}>
                 <View style={tw`flex-row justify-between items-center`}>
                   <Text style={tw`text-lg text-gray-500`}>Subtotal</Text>
                   <Text className="text-gray-500" >$200</Text>
@@ -32,9 +34,9 @@ const Cart = () => {
              </View>
             )}
             />
-            <Pressable style={tw`bg-black w-11/12 absolute bottom-3 self-center rounded-2xl`}>
+            <TouchableOpacity style={tw`bg-black w-11/12 absolute mt-130 self-center rounded-2xl`}>
               <Text style={tw`text-white self-center py-4`}>Checkout</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         )
       }
