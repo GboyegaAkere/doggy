@@ -9,6 +9,7 @@ import tw from "twrnc"
 const DetailScreen = () => {
     const {width} = useWindowDimensions()
     const product = products[0]
+    
     const addToCart =()=>{
         console.warn("set the function")
     }
