@@ -10,6 +10,7 @@ import DetailScreen from './src/screens/DetailScreen';
 import Cart from './src/screens/Cart';
 import { selectedNumberOfItems } from './store/CartSlice';
 import { useSelector } from 'react-redux';
+import OnBoarding from './src/screens/OnBoarding';
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ function AppNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='Onboard' component={OnBoarding} options={{headerShown:false}}/>
         <Stack.Screen name="Breeds" component={HomeScreen}
         options={({ navigation }) => ({
             headerRight: () => (
