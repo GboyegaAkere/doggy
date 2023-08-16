@@ -21,8 +21,9 @@ function AppNavigation() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Onboard' component={OnBoarding} options={{headerShown:false}}/>
-        <Stack.Screen name="Breeds" component={HomeScreen}
+        <Stack.Screen name="Breeds" component={HomeScreen} 
         options={({ navigation }) => ({
+            headerShadowVisible:false,
             headerRight: () => (
               <Pressable
                 onPress={() => navigation.navigate('Cart')}

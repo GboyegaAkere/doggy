@@ -1,4 +1,4 @@
-import { View, Text, Image,Pressable } from 'react-native'
+import { View, Text, Image,Pressable,  SafeAreaView} from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 import { FlatList } from 'react-native'
@@ -15,9 +15,9 @@ const HomeScreen = () => {
   const dispatch = useDispatch()
 
   return (
-    <View>
+    <SafeAreaView>
       <FlatList
-      data={products}
+      data={products}    
       renderItem={({item}) =>(
         <Pressable style={tw`w-3/6 p-1`} 
         onPress={()=>{
@@ -29,7 +29,7 @@ const HomeScreen = () => {
       )}
       numColumns={2}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 
